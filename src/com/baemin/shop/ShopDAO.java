@@ -4,7 +4,8 @@ import javax.naming.*;
 import javax.sql.*;
 import com.baemin.util.CoordDistance;
 import java.sql.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ShopDAO {
 
@@ -259,7 +260,7 @@ public class ShopDAO {
 			result = pstmt.executeUpdate();
 		} catch (Exception e) {
 			e.getStackTrace();
-			throw new Exception(" insertShop() 예외  " + e);
+			throw new Exception(" insertShop() 예외  "+e);
 		} finally {
 			close(con, pstmt, rs);
 		} // finally end
@@ -267,7 +268,7 @@ public class ShopDAO {
 	} // insertShop_end-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-
 
 	// updateShop_start-----------------------------------------------------------------------------
-	public int changePw(String pw, int no) throws Exception {
+	public int changePw(String pw,int no) throws Exception {
 		// 출력객체
 		int result = -1;
 		System.out.println("---ShopDAO changePw");
